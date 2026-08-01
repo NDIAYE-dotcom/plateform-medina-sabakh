@@ -1,0 +1,47 @@
+@import "./variables.css";
+@import "./reset.css";
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  color: var(--color-secondary);
+  line-height: 1.2;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+::selection {
+  background-color: var(--color-light);
+  color: var(--color-secondary);
+}
+
+/* Scrollbar discrète, cohérente avec l'identité visuelle */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-light);
+  border-radius: var(--radius-full);
+}

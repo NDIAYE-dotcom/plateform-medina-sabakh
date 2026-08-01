@@ -1,0 +1,68 @@
+/* Identité graphique UCDS — section 3 du cahier des charges */
+:root {
+  /* Palette officielle */
+  --color-primary: #2AAE8A;
+  --color-secondary: #124D41;
+  --color-light: #7FE3C6;
+  --color-bg-light: #CFF7EA;
+  --color-white: #F2FFFB;
+
+  /* Nuances dérivées (hover, focus, états) */
+  --color-primary-hover: #24997a;
+  --color-primary-active: #1e8368;
+  --color-secondary-hover: #0d3a31;
+
+  /* Texte */
+  --color-text: #0f2620;
+  --color-text-muted: #4b6b62;
+  --color-text-on-dark: var(--color-white);
+
+  /* États sémantiques */
+  --color-success: var(--color-primary);
+  --color-warning: #d99a2b;
+  --color-danger: #c9432f;
+  --color-info: #2b7fd9;
+
+  /* Surfaces */
+  --color-surface: var(--color-white);
+  --color-surface-alt: var(--color-bg-light);
+  --color-border: #d7ece5;
+
+  /* Typographie */
+  --font-family-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.75rem;
+
+  /* Espacements */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-8: 48px;
+  --space-10: 64px;
+
+  /* Rayons et ombres */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+  --shadow-sm: 0 1px 2px rgba(18, 77, 65, 0.06);
+  --shadow-md: 0 4px 12px rgba(18, 77, 65, 0.08);
+  --shadow-lg: 0 12px 32px rgba(18, 77, 65, 0.12);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+
+  /* Layout */
+  --sidebar-width: 260px;
+  --navbar-height: 64px;
+  --container-max: 1280px;
+}

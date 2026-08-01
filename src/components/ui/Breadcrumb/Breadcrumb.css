@@ -1,0 +1,32 @@
+.breadcrumb ol {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-sm);
+}
+
+.breadcrumb__link {
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.breadcrumb__link:hover {
+  color: var(--color-primary);
+}
+
+.breadcrumb__current {
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+.breadcrumb__separator {
+  display: inline-flex;
+  margin-inline: var(--space-2);
+  color: var(--color-border);
+  font-size: 0.9em;
+}

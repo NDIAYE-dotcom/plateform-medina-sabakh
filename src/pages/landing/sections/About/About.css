@@ -1,0 +1,85 @@
+.about {
+  padding-block: var(--space-10);
+}
+
+.about__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.about__visual {
+  position: relative;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__frame {
+  width: 220px;
+  height: 220px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--color-bg-light), var(--color-light));
+  box-shadow: var(--shadow-md);
+}
+
+.about__badge {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-lg);
+  font-size: 1.6rem;
+  color: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+
+.about__badge--primary {
+  top: 10px;
+  left: calc(50% - 130px);
+  background-color: var(--color-primary);
+}
+
+.about__badge--secondary {
+  bottom: 10px;
+  right: calc(50% - 130px);
+  background-color: var(--color-secondary);
+}
+
+.about__eyebrow {
+  display: inline-block;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+  background-color: var(--color-bg-light);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-4);
+}
+
+.about__content h2 {
+  font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.4rem);
+  margin-bottom: var(--space-5);
+}
+
+.about__lead {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  border-left: 3px solid var(--color-primary);
+  padding-left: var(--space-5);
+  font-style: italic;
+}
+
+@media (min-width: 960px) {
+  .about__inner {
+    grid-template-columns: 0.8fr 1fr;
+    gap: var(--space-10);
+  }
+}

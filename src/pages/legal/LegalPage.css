@@ -1,0 +1,31 @@
+.legal-page {
+  padding-block: var(--space-10);
+  min-height: 60vh;
+}
+
+.legal-page h1 {
+  margin-bottom: var(--space-3);
+}
+
+.legal-page p {
+  color: var(--color-text-muted);
+  max-width: 70ch;
+  line-height: 1.7;
+}
+
+.legal-page__notice {
+  margin-top: var(--space-6);
+  padding: var(--space-4) var(--space-5);
+  border-left: 3px solid var(--color-primary);
+  background-color: var(--color-bg-light);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-secondary);
+}
+
+.legal-page__back {
+  display: inline-block;
+  margin-top: var(--space-6);
+  color: var(--color-primary);
+  font-weight: 600;
+}

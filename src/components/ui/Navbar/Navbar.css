@@ -1,0 +1,125 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  height: var(--navbar-height);
+  padding-inline: var(--space-5);
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navbar__left,
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.navbar__icon-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  font-size: 1.2rem;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.navbar__icon-btn:hover {
+  background-color: var(--color-surface-alt);
+  color: var(--color-secondary);
+}
+
+.navbar__badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  min-width: 16px;
+  height: 16px;
+  padding-inline: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-danger);
+  color: var(--color-white);
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+}
+
+.navbar__search {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 280px;
+  max-width: 40vw;
+  height: 38px;
+  padding-inline: var(--space-3);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-muted);
+}
+
+.navbar__search input {
+  flex: 1;
+  background: none;
+  border: none;
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+}
+
+.navbar__search input:focus {
+  outline: none;
+}
+
+.navbar__user {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding-left: var(--space-2);
+  border-left: 1px solid var(--color-border);
+}
+
+.navbar__avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+}
+
+.navbar__user-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.navbar__user-name {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+
+.navbar__user-role {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 640px) {
+  .navbar__search {
+    display: none;
+  }
+
+  .navbar__user-info {
+    display: none;
+  }
+}
