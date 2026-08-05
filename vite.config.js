@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg'],
+      includeAssets: ['favicon.png', 'logo-icon.png', 'logo-full.png'],
       manifest: {
         lang: 'fr',
         name: 'UCDS — Union des Comités de Développement Sanitaire',
