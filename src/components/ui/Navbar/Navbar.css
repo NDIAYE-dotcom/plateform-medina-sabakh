@@ -34,6 +34,74 @@
   color: var(--color-secondary);
 }
 
+.navbar__icon-btn--signout:hover {
+  background-color: rgba(201, 67, 47, 0.1);
+  color: var(--color-danger);
+}
+
+.navbar__notifications {
+  position: relative;
+}
+
+.navbar__notifications-panel {
+  position: absolute;
+  top: calc(100% + var(--space-2));
+  right: 0;
+  width: 320px;
+  max-width: 88vw;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-3);
+  z-index: 40;
+}
+
+.navbar__notifications-title {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  padding: var(--space-2) var(--space-2) var(--space-3);
+}
+
+.navbar__notifications-empty {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  padding: var(--space-2);
+}
+
+.navbar__notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.navbar__notifications-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-2) var(--space-2);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  transition: background-color var(--transition-fast);
+}
+
+.navbar__notifications-item:hover {
+  background-color: var(--color-surface-alt);
+}
+
+.navbar__notifications-item-label {
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+}
+
+.navbar__notifications-item-description {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
 .navbar__badge {
   position: absolute;
   top: 4px;
@@ -120,6 +188,12 @@
   }
 
   .navbar__user-info {
+    display: none;
+  }
+}
+
+@media (min-width: 960px) {
+  .navbar__icon-btn--menu {
     display: none;
   }
 }

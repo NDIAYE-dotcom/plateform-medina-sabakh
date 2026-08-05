@@ -1,0 +1,78 @@
+.grossesse-page {
+  padding-block: var(--space-6) var(--space-10);
+}
+
+.grossesse-page__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-5);
+}
+
+.grossesse-page__subtitle {
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+.grossesse-page__search {
+  max-width: 420px;
+  margin-bottom: var(--space-5);
+}
+
+.grossesse-page__pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-5);
+}
+
+.grossesse-page__restricted {
+  color: var(--color-text-muted);
+  margin-top: var(--space-3);
+}
+
+/* Modal "Nouvelle grossesse" */
+.new-grossesse-modal__search-wrap {
+  position: relative;
+}
+
+.new-grossesse-modal__results {
+  position: absolute;
+  z-index: 10;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: var(--space-1);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.new-grossesse-modal__results button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  font-size: var(--font-size-sm);
+}
+
+.new-grossesse-modal__results button:hover {
+  background-color: var(--color-surface-alt);
+}
+
+.new-grossesse-modal__result-dossier {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.new-grossesse-modal__empty {
+  margin-top: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}

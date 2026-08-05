@@ -93,6 +93,29 @@
   color: var(--color-white);
 }
 
+.sidebar__item--disabled {
+  color: var(--color-border);
+  cursor: default;
+}
+
+.sidebar__item--disabled:hover {
+  background-color: transparent;
+  color: var(--color-border);
+}
+
+.sidebar__badge {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-text-muted);
+  background-color: var(--color-surface-alt);
+  padding: 2px 6px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
 .sidebar__icon {
   display: inline-flex;
   flex-shrink: 0;

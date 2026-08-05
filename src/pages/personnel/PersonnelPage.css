@@ -1,0 +1,82 @@
+.personnel-page {
+  padding-block: var(--space-6) var(--space-10);
+}
+
+.personnel-page__header {
+  margin-bottom: var(--space-6);
+}
+
+.personnel-page__subtitle {
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+.personnel-page__restricted {
+  color: var(--color-text-muted);
+  margin-top: var(--space-3);
+}
+
+.personnel-page__section {
+  margin-bottom: var(--space-8);
+}
+
+.personnel-page__section h2 {
+  margin-bottom: var(--space-4);
+}
+
+.personnel-page__empty {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.personnel-page__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.personnel-page__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  padding: var(--space-4);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.personnel-page__row-info p {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.personnel-page__row-date {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.personnel-page__row-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.personnel-page__row-actions .field {
+  min-width: 180px;
+}
+
+.personnel-page__delete-warning {
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.personnel-page__delete-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}

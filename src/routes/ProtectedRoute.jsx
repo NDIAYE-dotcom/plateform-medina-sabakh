@@ -1,10 +1,22 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { Loader } from "../components/ui";
 import { useAuth } from "../context/AuthContext";
 
-export default function ProtectedRoute() {
-  const { isAuthenticated, loading } = useAuth();
+export default function ProtectedRoute({ allowedRoles }) {
+  const { isAuthenticated, loading, profileLoading, role } = useAuth();
+  const location = useLocation();
 
-  if (loading) return null;
+  if (loading || (isAuthenticated && profileLoading && !role)) {
+    return <Loader fullScreen label="Chargement..." />;
+  }
 
-  return isAuthenticated ? <Outlet /> : <Navigate to="/connexion" replace />;
+  if (!isAuthenticated) {
+    return <Navigate to="/connexion" state={{ from: location.pathname }} replace />;
+  }
+
+  if (allowedRoles && !allowedRoles.includes(role)) {
+    return <Navigate to="/acces-refuse" replace />;
+  }
+
+  return <Outlet />;
 }

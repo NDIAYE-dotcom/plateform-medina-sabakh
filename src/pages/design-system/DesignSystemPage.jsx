@@ -12,11 +12,13 @@ import {
   Modal,
   Navbar,
   Pagination,
+  QrCode,
   Select,
   Sidebar,
   Skeleton,
   Sparkline,
   Table,
+  Tabs,
   Textarea,
 } from "../../components/ui";
 import { CheckIcon } from "../../components/ui/icons";
@@ -43,13 +45,18 @@ export default function DesignSystemPage() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [page, setPage] = useState(1);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [activeDemoTab, setActiveDemoTab] = useState("apercu");
 
   return (
     <div className="ds-page">
       <Navbar
         showSearch
-        notificationsCount={3}
+        notifications={[
+          { id: "1", label: "3 articles sous le seuil", description: "Pharmacie", to: "#" },
+          { id: "2", label: "1 compte en attente", description: "Personnel", to: "#" },
+        ]}
         user={{ name: "Aminata Sow", role: "Infirmier Chef de Poste" }}
+        onSignOut={() => toast.info("Déconnexion (démonstration)")}
       />
 
       <div className="ds-layout">
@@ -220,6 +227,27 @@ export default function DesignSystemPage() {
           <section className="ds-section">
             <h2>Pagination</h2>
             <Pagination currentPage={page} totalPages={9} onPageChange={setPage} />
+          </section>
+
+          <section className="ds-section">
+            <h2>Tabs</h2>
+            <Tabs
+              tabs={[
+                { id: "apercu", label: "Aperçu" },
+                { id: "historique", label: "Historique" },
+                { id: "documents", label: "Documents", badge: 3 },
+              ]}
+              activeId={activeDemoTab}
+              onChange={setActiveDemoTab}
+            />
+            <p className="ds-subtitle">Onglet actif : {activeDemoTab}</p>
+          </section>
+
+          <section className="ds-section">
+            <h2>QR Code</h2>
+            <div className="ds-row">
+              <QrCode value="MSB-0001-20260804" size={140} />
+            </div>
           </section>
 
           <section className="ds-section">

@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
-import { Button, Card } from "../../../../components/ui";
-import { MapPinIcon } from "../../../../components/ui/icons";
+import { Button } from "../../../../components/ui";
+import { ArrowRightIcon, MapPinIcon } from "../../../../components/ui/icons";
 import Reveal from "../../components/Reveal/Reveal";
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
 import "./HealthPosts.css";
 
 const HEALTH_POSTS = [
-  { name: "Médina Sabakh" },
-  { name: "Keur Ayib Gueye" },
-  { name: "Falila" },
-  { name: "Kohel" },
-  { name: "Ndiba" },
-  { name: "Ndiayène" },
-  { name: "Payoma" },
+  "Médina Sabakh",
+  "Keur Ayib Gueye",
+  "Falila",
+  "Kohel",
+  "Ndiba",
+  "Ndiayène",
+  "Payoma",
 ];
 
 export default function HealthPosts() {
@@ -22,31 +22,27 @@ export default function HealthPosts() {
         <SectionHeading
           eyebrow="Notre réseau"
           title="Les postes de santé de la commune"
-          description="Chaque poste de santé dispose de son propre espace sécurisé au sein de la plateforme UCDS."
+          description="Chaque poste de santé dispose de son propre espace sécurisé au sein de la plateforme UCDS. Choisissez le vôtre lors de votre inscription."
         />
 
-        <div className="health-posts__grid">
-          {HEALTH_POSTS.map((post, index) => (
-            <Reveal key={post.name} delay={index * 70}>
-              <Card className="health-posts__card" padded={false}>
-                <div className="health-posts__photo">
-                  <MapPinIcon />
-                  <span>{post.name}</span>
-                </div>
-                <div className="health-posts__body">
-                  <Card.Title>{post.name}</Card.Title>
-                  <Card.Description>
-                    Poste de santé de la commune de Médina Sabakh, engagé pour une santé de
-                    proximité au service des populations.
-                  </Card.Description>
-                  <Button as={Link} to="/connexion" variant="outline" size="sm" fullWidth>
-                    Accéder à l'espace du poste
-                  </Button>
-                </div>
-              </Card>
-            </Reveal>
-          ))}
-        </div>
+        <Reveal>
+          <ul className="health-posts__list">
+            {HEALTH_POSTS.map((name) => (
+              <li key={name} className="health-posts__pill">
+                <MapPinIcon />
+                <span>{name}</span>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+
+        <Reveal delay={80}>
+          <div className="health-posts__cta">
+            <Button as={Link} to="/connexion" size="lg" iconRight={<ArrowRightIcon />}>
+              Accéder à mon espace
+            </Button>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

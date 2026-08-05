@@ -28,7 +28,7 @@ export default function Select({
         <select
           id={inputId}
           className="field__control"
-          defaultValue=""
+          defaultValue={rest.value === undefined ? "" : undefined}
           aria-invalid={Boolean(error)}
           aria-describedby={error ? `${inputId}-error` : hint ? `${inputId}-hint` : undefined}
           {...rest}

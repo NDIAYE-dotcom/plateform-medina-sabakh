@@ -1,0 +1,211 @@
+.rapports-page {
+  padding-block: var(--space-6) var(--space-10);
+}
+
+.rapports-page__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-5);
+}
+
+.rapports-page__subtitle {
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+.rapports-page__restricted {
+  color: var(--color-text-muted);
+  margin-top: var(--space-3);
+}
+
+.rapports-page__period {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-5);
+  max-width: 480px;
+}
+
+.rapports-page__period > * {
+  flex: 1;
+}
+
+.rapports-page__kpis {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.rapports-page__stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-4) var(--space-5);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.rapports-page__stat-card--danger {
+  background-color: var(--color-bg-light);
+  border-color: var(--color-danger);
+}
+
+.rapports-page__stat-label {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-text-muted);
+}
+
+.rapports-page__stat-value {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+@media (min-width: 640px) {
+  .rapports-page__kpis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .rapports-page__kpis {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.rapports-page__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 960px) {
+  .rapports-page__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.rapports-page__empty {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  padding-block: var(--space-2);
+}
+
+.rapports-page__empty--success {
+  color: var(--color-primary);
+}
+
+.rapports-page__alert-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.rapports-page__alert-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-block: var(--space-1);
+  font-size: var(--font-size-sm);
+}
+
+/* Rapport (impression) */
+.print-modal-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.print-modal-footer__hint {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.rapport-print-modal__print-btn {
+  width: 100%;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+.rapport-print-modal__print-btn:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.rapport-print {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.rapport-print__periode {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-2);
+}
+
+.rapport-print__section {
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border);
+}
+
+.rapport-print__section-title {
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.rapport-print__line {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-block: var(--space-1);
+  font-size: var(--font-size-sm);
+}
+
+.rapport-print__line--total {
+  font-weight: 700;
+  border-top: 1px dashed var(--color-border);
+  margin-top: var(--space-1);
+  padding-top: var(--space-2);
+}
+
+.rapport-print__line--negative {
+  color: var(--color-danger);
+}
+
+.rapport-print__empty {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .rapport-print,
+  .rapport-print * {
+    visibility: visible;
+  }
+
+  .rapport-print {
+    position: fixed;
+    inset: 0;
+    padding: var(--space-10) var(--space-6);
+  }
+}

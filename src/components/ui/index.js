@@ -11,6 +11,8 @@ export { default as Drawer } from "./Drawer/Drawer";
 export { default as Sidebar } from "./Sidebar/Sidebar";
 export { default as Navbar } from "./Navbar/Navbar";
 export { default as Breadcrumb } from "./Breadcrumb/Breadcrumb";
+export { default as Tabs } from "./Tabs/Tabs";
+export { default as QrCode } from "./QrCode/QrCode";
 export { default as Pagination } from "./Pagination/Pagination";
 export { default as Loader } from "./Loader/Loader";
 export { default as Skeleton } from "./Skeleton/Skeleton";

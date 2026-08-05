@@ -1,0 +1,38 @@
+.patient-form {
+  padding-block: var(--space-6) var(--space-10);
+  max-width: 760px;
+}
+
+.patient-form__form {
+  margin-top: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.patient-form__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.patient-form__error {
+  color: var(--color-danger);
+  font-size: var(--font-size-sm);
+  background-color: rgba(201, 67, 47, 0.08);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+}
+
+.patient-form__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+@media (min-width: 640px) {
+  .patient-form__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

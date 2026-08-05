@@ -1,0 +1,212 @@
+.pharmacie-page {
+  padding-block: var(--space-6) var(--space-10);
+}
+
+.pharmacie-page__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-5);
+}
+
+.pharmacie-page__subtitle {
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+.pharmacie-page__header-actions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.btn.pharmacie-page__outline-btn {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+.btn.pharmacie-page__outline-btn:hover:not(:disabled) {
+  border-color: var(--color-secondary-hover);
+  color: var(--color-secondary-hover);
+  background-color: var(--color-bg-light);
+}
+
+.pharmacie-page__toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-5);
+}
+
+.pharmacie-page__search {
+  max-width: 420px;
+  flex: 1;
+  margin-bottom: var(--space-5);
+}
+
+.pharmacie-page__toolbar .pharmacie-page__search {
+  margin-bottom: 0;
+}
+
+.pharmacie-page__stock-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.pharmacie-page__modified-by {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  margin-top: 2px;
+}
+
+.pharmacie-page__row-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.pharmacie-page__pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-5);
+}
+
+.pharmacie-page__restricted {
+  color: var(--color-text-muted);
+  margin-top: var(--space-3);
+}
+
+.pharmacie-page__back {
+  display: inline-block;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-4);
+}
+
+.pharmacie-page__inventaire-link {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+}
+
+.pharmacie-page__inventaire-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.pharmacie-page__inventaire-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  padding: var(--space-4);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.pharmacie-page__inventaire-row-info p {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.pharmacie-page__inventaire-row .pharmacie-page__row-actions .field {
+  min-width: 140px;
+}
+
+.pharmacie-page__inventaire-result {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+}
+
+.pharmacie-page__inventaire-close {
+  margin-top: var(--space-6);
+  padding: var(--space-4);
+  background-color: var(--color-surface-alt);
+  border-radius: var(--radius-md);
+}
+
+.pharmacie-page__empty {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  padding-block: var(--space-4);
+}
+
+.pharmacie-page__ordonnance-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.pharmacie-page__ordonnance-card {
+  padding: var(--space-4) var(--space-5);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.pharmacie-page__ordonnance-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.pharmacie-page__ordonnance-patient {
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+.pharmacie-page__ordonnance-dossier {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  margin-top: 2px;
+}
+
+.pharmacie-page__ordonnance-date {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  white-space: nowrap;
+}
+
+.pharmacie-page__ordonnance-meds {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.pharmacie-page__ordonnance-med {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.pharmacie-page__ordonnance-med-nom {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.pharmacie-page__ordonnance-med-detail {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}

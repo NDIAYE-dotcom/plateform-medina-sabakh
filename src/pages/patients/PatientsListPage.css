@@ -1,0 +1,33 @@
+.patients-list {
+  padding-block: var(--space-6) var(--space-10);
+}
+
+.patients-list__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-5);
+}
+
+.patients-list__subtitle {
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+.patients-list__search {
+  max-width: 420px;
+  margin-bottom: var(--space-5);
+}
+
+.patients-list__pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-5);
+}
+
+.patients-list__restricted {
+  color: var(--color-text-muted);
+  margin-top: var(--space-3);
+}

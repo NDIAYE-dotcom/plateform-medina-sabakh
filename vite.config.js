@@ -10,6 +10,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg'],
       manifest: {
+        lang: 'fr',
         name: 'UCDS — Union des Comités de Développement Sanitaire',
         short_name: 'UCDS',
         description:

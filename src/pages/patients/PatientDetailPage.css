@@ -1,0 +1,419 @@
+.patient-detail {
+  padding-block: var(--space-6) var(--space-10);
+}
+
+.patient-detail__back {
+  display: inline-block;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-4);
+}
+
+.patient-detail__subtitle {
+  color: var(--color-text-muted);
+  margin: var(--space-2) 0 var(--space-4);
+}
+
+.patient-detail__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-6);
+}
+
+.patient-detail__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+/* Onglets partagés */
+.patient-tab {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.patient-tab__fields-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.patient-tab__field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.patient-tab__field-label {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-text-muted);
+}
+
+.patient-tab__field-value {
+  color: var(--color-text);
+}
+
+.patient-tab__inline-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  align-items: end;
+  background-color: var(--color-surface-alt);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+}
+
+.patient-tab__form-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  background-color: var(--color-surface-alt);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+}
+
+.patient-tab__form-actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.patient-tab__add-btn {
+  align-self: flex-start;
+}
+
+.patient-tab__empty {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.patient-tab__locked {
+  padding: var(--space-5);
+  border-left: 3px solid var(--color-border);
+  background-color: var(--color-surface-alt);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+}
+
+.patient-tab__documents-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.patient-tab__document {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.patient-tab__note-date {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.patient-tab__document-actions {
+  display: flex;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.patient-tab__upload {
+  display: flex;
+}
+
+.patient-tab__file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+@media (min-width: 640px) {
+  .patient-tab__fields-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .patient-tab__inline-form {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}
+
+/* Card générique réutilisée par Informations, Historique, Consultations, Ordonnances, Suivi */
+.patient-tab__card-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.patient-tab__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 640px;
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.patient-tab__card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.patient-tab__card-date {
+  font-weight: 700;
+  color: var(--color-secondary);
+  font-size: var(--font-size-base);
+}
+
+.patient-tab__card .patient-tab__fields-grid {
+  margin-bottom: 0;
+}
+
+/* Consultations */
+.consultation-card__vitals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.consultation-card__vital {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-bg-light);
+  border-radius: var(--radius-md);
+  min-width: 96px;
+}
+
+.consultation-card__vital-label {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-secondary);
+}
+
+.consultation-card__vital-value {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.patient-tab__highlight-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-surface-alt);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius-md);
+}
+
+.patient-tab__highlight-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.patient-tab__highlight-title {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.patient-tab__highlight-detail {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.patient-tab__inline-sub-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  background-color: var(--color-surface-alt);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+}
+
+@media (min-width: 640px) {
+  .patient-tab__inline-sub-form {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* Ordonnance (impression) */
+.print-modal-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.print-modal-footer__hint {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.ordonnance-print-modal__print-btn {
+  width: 100%;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+.ordonnance-print-modal__print-btn:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.ordonnance-print {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.ordonnance-print__title {
+  text-align: center;
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: var(--space-1);
+}
+
+.ordonnance-print__meta {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-light);
+}
+
+.ordonnance-print__patient-name {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.ordonnance-print__patient-dossier {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  margin-top: 2px;
+}
+
+.ordonnance-print__date {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  white-space: nowrap;
+}
+
+.ordonnance-print__diagnostic {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-primary);
+  background-color: var(--color-bg-light);
+}
+
+.ordonnance-print__diagnostic-label {
+  display: block;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-secondary);
+  margin-bottom: 2px;
+}
+
+.ordonnance-print__diagnostic p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+}
+
+.ordonnance-print__lines {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  list-style: none;
+}
+
+.ordonnance-print__line {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.ordonnance-print__line-number {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+}
+
+.ordonnance-print__medicament {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.ordonnance-print__posologie {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .ordonnance-print,
+  .ordonnance-print * {
+    visibility: visible;
+  }
+
+  .ordonnance-print {
+    position: fixed;
+    inset: 0;
+    padding: var(--space-10) var(--space-6);
+  }
+}
