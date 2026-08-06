@@ -43,7 +43,11 @@ function ActualiteFormModal({ open, actualite, onClose, onSaved }) {
     let imagePath = actualite?.image_path ?? null;
 
     if (imageFile) {
-      const path = `${Date.now()}-${imageFile.name}`;
+      const safeName = imageFile.name
+        .normalize("NFD")
+        .replace(/[̀-ͯ]/g, "")
+        .replace(/[^a-zA-Z0-9.]/g, "-");
+      const path = `${Date.now()}-${safeName}`;
       const { error: uploadError } = await supabase.storage
         .from("actualites-images")
         .upload(path, imageFile);
