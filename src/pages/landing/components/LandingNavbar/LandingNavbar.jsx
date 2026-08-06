@@ -28,7 +28,7 @@ export default function LandingNavbar() {
     <header className={`landing-navbar ${scrolled ? "landing-navbar--scrolled" : ""}`}>
       <div className="container landing-navbar__inner">
         <a href="#accueil" className="landing-navbar__brand">
-          <Logo size={34} />
+          <Logo size={40} variant="white" />
         </a>
 
         <nav className="landing-navbar__links" aria-label="Navigation principale">
@@ -40,7 +40,7 @@ export default function LandingNavbar() {
         </nav>
 
         <div className="landing-navbar__actions">
-          <Button as={Link} to="/connexion" size="sm">
+          <Button as={Link} to="/connexion" size="sm" className="landing-navbar__cta">
             Accéder à la plateforme
           </Button>
         </div>

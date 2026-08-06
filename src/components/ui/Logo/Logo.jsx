@@ -1,11 +1,12 @@
 import "./Logo.css";
 
-export default function Logo({ withWordmark = true, wordmarkSuffix = "", size = 36 }) {
+export default function Logo({ withWordmark = true, wordmarkSuffix = "", size = 36, variant = "color" }) {
+  const isWhite = variant === "white";
   return (
     <span className="logo">
       {withWordmark ? (
         <img
-          src="/logo-full.png"
+          src={isWhite ? "/logo-white.png" : "/logo-full.png"}
           alt="UCDS — Union des Comités de Développement Sanitaire"
           className="logo__mark logo__mark--full"
           style={{ height: size }}

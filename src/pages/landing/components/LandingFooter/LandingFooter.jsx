@@ -24,7 +24,7 @@ export default function LandingFooter() {
     <footer className="landing-footer">
       <div className="container landing-footer__top">
         <div className="landing-footer__brand">
-          <Logo size={32} />
+          <Logo size={32} variant="white" />
           <p>
             Union des Comités de Développement Sanitaire — Commune de Médina Sabakh, Sénégal.
           </p>
