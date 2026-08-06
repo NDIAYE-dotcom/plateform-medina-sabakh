@@ -1,46 +1,21 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { Badge, Card } from "../../../../components/ui";
+import { ACTUALITE_CATEGORIE_OPTIONS, getActualiteCategorieLabel } from "../../../../constants/actualites";
+import { useActualites } from "../../../../hooks/useActualites";
 import Reveal from "../../components/Reveal/Reveal";
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
 import "./News.css";
 
-const CATEGORIES = ["Tout", "Blog", "Évènements", "Campagnes", "Vaccinations", "Sensibilisations"];
+const FILTERS = [{ value: "", label: "Tout" }, ...ACTUALITE_CATEGORIE_OPTIONS];
 
-/* Contenu d'exemple en attendant la connexion au module Actualités (backend à définir) */
-const ARTICLES = [
-  {
-    id: 1,
-    category: "Vaccinations",
-    title: "Campagne de vaccination infantile dans les postes de santé",
-    date: "Exemple de contenu",
-    excerpt: "Une campagne conjointe pour renforcer la couverture vaccinale des enfants de la commune.",
-  },
-  {
-    id: 2,
-    category: "Sensibilisations",
-    title: "Journée de sensibilisation sur l'hygiène communautaire",
-    date: "Exemple de contenu",
-    excerpt: "Les agents de santé communautaires mobilisés auprès des familles de chaque village.",
-  },
-  {
-    id: 3,
-    category: "Évènements",
-    title: "Assemblée générale des Comités de Développement Sanitaire",
-    date: "Exemple de contenu",
-    excerpt: "Un temps fort de coordination entre les différents postes de santé de l'UCDS.",
-  },
-];
+function formatDate(value) {
+  if (!value) return "";
+  return new Date(value).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
+}
 
 export default function News() {
-  const [activeCategory, setActiveCategory] = useState("Tout");
-
-  const filteredArticles = useMemo(
-    () =>
-      activeCategory === "Tout"
-        ? ARTICLES
-        : ARTICLES.filter((article) => article.category === activeCategory),
-    [activeCategory]
-  );
+  const [activeCategorie, setActiveCategorie] = useState("");
+  const { actualites, loading } = useActualites({ categorie: activeCategorie || undefined });
 
   return (
     <section id="actualites" className="news">
@@ -52,31 +27,39 @@ export default function News() {
         />
 
         <div className="news__filters">
-          {CATEGORIES.map((category) => (
+          {FILTERS.map((filter) => (
             <button
-              key={category}
+              key={filter.value}
               type="button"
-              className={`news__filter ${activeCategory === category ? "news__filter--active" : ""}`}
-              onClick={() => setActiveCategory(category)}
+              className={`news__filter ${activeCategorie === filter.value ? "news__filter--active" : ""}`}
+              onClick={() => setActiveCategorie(filter.value)}
             >
-              {category}
+              {filter.label}
             </button>
           ))}
         </div>
 
-        <div className="news__grid">
-          {filteredArticles.map((article, index) => (
-            <Reveal key={article.id} delay={index * 90}>
-              <Card hoverable className="news__card">
-                <div className="news__thumb" aria-hidden="true" />
-                <Badge tone="primary">{article.category}</Badge>
-                <Card.Title className="news__title">{article.title}</Card.Title>
-                <Card.Description>{article.excerpt}</Card.Description>
-                <span className="news__date">{article.date}</span>
-              </Card>
-            </Reveal>
-          ))}
-        </div>
+        {loading ? null : actualites.length === 0 ? (
+          <p className="news__empty">Aucune actualité publiée pour le moment.</p>
+        ) : (
+          <div className="news__grid">
+            {actualites.map((actualite, index) => (
+              <Reveal key={actualite.id} delay={index * 90}>
+                <Card hoverable className="news__card">
+                  {actualite.image_url ? (
+                    <img src={actualite.image_url} alt="" className="news__thumb-img" />
+                  ) : (
+                    <div className="news__thumb" aria-hidden="true" />
+                  )}
+                  <Badge tone="primary">{getActualiteCategorieLabel(actualite.categorie)}</Badge>
+                  <Card.Title className="news__title">{actualite.titre}</Card.Title>
+                  {actualite.description && <Card.Description>{actualite.description}</Card.Description>}
+                  <span className="news__date">{formatDate(actualite.created_at)}</span>
+                </Card>
+              </Reveal>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

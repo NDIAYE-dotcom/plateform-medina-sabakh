@@ -738,6 +738,25 @@ déjà garantie côté base de données par la Row Level Security. Le Super Admi
 consulter l'espace de n'importe quel poste (bouton "Voir l'espace" depuis son tableau de bord) à
 des fins de supervision.
 
+## Actualités — module Super Admin (post-étape 17, 2026-08-06)
+
+La section "Actualités" de la Landing Page (§5.9 du cahier des charges) était jusqu'ici un contenu
+d'exemple statique. Elle est maintenant pilotée par le **Super Admin UCDS**, qui a le monopole de
+sa gestion (aucun Administrateur Poste n'y a accès — c'est du contenu institutionnel global, pas
+lié à un poste précis).
+
+- Nouvelle page **`/actualites`** (dernier élément du menu du Super Admin) : créer, modifier,
+  supprimer des actualités — titre, catégorie (Blog / Évènements / Campagnes / Vaccinations /
+  Sensibilisations, les 5 déjà affichées sur la Landing Page), description, image.
+- `supabase/migrations/0024_actualites.sql` : table `actualites` + bucket Storage public
+  `actualites-images`. Lecture ouverte à **tout le monde, y compris les visiteurs non connectés**
+  (`to anon, authenticated`) — c'est la seule table du projet avec cette policy en dehors de
+  `postes_sante` (liste des postes pour le formulaire d'inscription), puisque la Landing Page est
+  publique. Écriture strictement réservée à `is_super_admin()`.
+- La section "Actualités" de la Landing Page (`src/pages/landing/sections/News/News.jsx`) lit
+  maintenant ces données réelles au lieu du tableau d'exemple — toute modification faite par le
+  Super Admin apparaît immédiatement pour les visiteurs, sans redéploiement.
+
 ## Étape 17 — Tests, optimisation, sécurité, PWA et déploiement
 
 Dernière étape du cahier des charges. Résumé de ce qui a été fait, ce qui reste à valider par le

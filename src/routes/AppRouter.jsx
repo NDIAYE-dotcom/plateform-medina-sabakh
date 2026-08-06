@@ -15,6 +15,7 @@ const ForgotPasswordPage = lazy(() => import("../pages/auth/ForgotPasswordPage")
 const ResetPasswordPage = lazy(() => import("../pages/auth/ResetPasswordPage"));
 const DashboardLayout = lazy(() => import("../layouts/DashboardLayout"));
 const DashboardPage = lazy(() => import("../pages/dashboard/DashboardPage"));
+const ActualitesPage = lazy(() => import("../pages/actualites/ActualitesPage"));
 const PosteDashboardPage = lazy(() => import("../pages/poste/PosteDashboardPage"));
 const PatientsListPage = lazy(() => import("../pages/patients/PatientsListPage"));
 const PatientFormPage = lazy(() => import("../pages/patients/PatientFormPage"));
@@ -63,6 +64,7 @@ export default function AppRouter() {
           <Route element={<DashboardLayout />}>
             <Route element={<RequireSuperAdmin />}>
               <Route path="/tableau-de-bord" element={<DashboardPage />} />
+              <Route path="/actualites" element={<ActualitesPage />} />
             </Route>
 
             <Route path="/poste/:slug" element={<RequirePosteAccess />}>

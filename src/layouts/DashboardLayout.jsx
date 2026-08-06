@@ -7,6 +7,7 @@ import {
   BriefcaseIcon,
   ClipboardIcon,
   GridIcon,
+  MegaphoneIcon,
   PillIcon,
   SettingsIcon,
   TicketIcon,
@@ -26,6 +27,7 @@ import "./DashboardLayout.css";
 function buildNavSections({
   homePath,
   currentPosteSlug,
+  isSuperAdmin,
   canViewPatients,
   canViewConsultations,
   canViewGrossesse,
@@ -98,7 +100,12 @@ function buildNavSections({
   return [
     {
       title: "Général",
-      items: [{ label: "Tableau de bord", to: homePath, icon: <GridIcon /> }],
+      items: [
+        { label: "Tableau de bord", to: homePath, icon: <GridIcon /> },
+        isSuperAdmin
+          ? { label: "Actualités", to: "/actualites", icon: <MegaphoneIcon /> }
+          : null,
+      ].filter(Boolean),
     },
     {
       title: "Modules",
@@ -141,6 +148,7 @@ export default function DashboardLayout() {
   const navSections = buildNavSections({
     homePath: getHomePath({ role, posteSlug }),
     currentPosteSlug,
+    isSuperAdmin,
     ...moduleAccess,
   });
 
