@@ -11,43 +11,98 @@
 
 .about__visual {
   position: relative;
-  height: 260px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: var(--space-6);
 }
 
-.about__frame {
-  width: 220px;
-  height: 220px;
-  border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, var(--color-bg-light), var(--color-light));
-  box-shadow: var(--shadow-md);
+.about__visual.reveal {
+  transform: translateY(24px) scale(0.96);
 }
 
-.about__badge {
+.about__visual.reveal--visible {
+  transform: translateY(0) scale(1);
+}
+
+.about__glow {
   position: absolute;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 64px;
-  height: 64px;
+  inset: -8%;
+  z-index: 0;
+  background: radial-gradient(circle at 28% 25%, var(--color-light), transparent 60%),
+    radial-gradient(circle at 75% 75%, var(--color-primary), transparent 55%);
+  opacity: 0.3;
+  filter: blur(48px);
+  animation: about-glow-pulse 7s ease-in-out infinite;
+}
+
+.about__float {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px;
+  animation: about-float 7s ease-in-out infinite;
+}
+
+.about__image-wrap {
   border-radius: var(--radius-lg);
-  font-size: 1.6rem;
-  color: var(--color-white);
-  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
-.about__badge--primary {
-  top: 10px;
-  left: calc(50% - 130px);
-  background-color: var(--color-primary);
+.about__image-wrap:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(18, 77, 65, 0.18);
 }
 
-.about__badge--secondary {
-  bottom: 10px;
-  right: calc(50% - 130px);
-  background-color: var(--color-secondary);
+.about__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.6s ease;
+}
+
+.about__image-wrap:hover .about__image {
+  transform: scale(1.04);
+}
+
+@keyframes about-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes about-glow-pulse {
+  0%,
+  100% {
+    opacity: 0.22;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about__visual.reveal,
+  .about__visual.reveal--visible {
+    transform: none;
+  }
+
+  .about__glow,
+  .about__float,
+  .about__image-wrap,
+  .about__image {
+    animation: none;
+    transition: none;
+  }
 }
 
 .about__eyebrow {

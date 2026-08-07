@@ -1,4 +1,3 @@
-import { HeartPulseIcon, UsersIcon } from "../../../../components/ui/icons";
 import Reveal from "../../components/Reveal/Reveal";
 import "./About.css";
 
@@ -7,13 +6,17 @@ export default function About() {
     <section id="a-propos" className="about">
       <div className="container about__inner">
         <Reveal className="about__visual" as="div">
-          <div className="about__badge about__badge--primary">
-            <UsersIcon />
+          <div className="about__glow" aria-hidden="true" />
+          <div className="about__float">
+            <div className="about__image-wrap">
+              <img
+                src="/about-illustration.webp"
+                alt="Vue d'ensemble d'un poste de santé UCDS : consultations, vaccination, pharmacie et mobilisation communautaire"
+                className="about__image"
+                loading="lazy"
+              />
+            </div>
           </div>
-          <div className="about__badge about__badge--secondary">
-            <HeartPulseIcon />
-          </div>
-          <div className="about__frame" />
         </Reveal>
 
         <Reveal delay={100} className="about__content">
