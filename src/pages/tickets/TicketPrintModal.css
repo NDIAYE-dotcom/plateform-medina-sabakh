@@ -1,0 +1,259 @@
+/* Sélecteur de format, dans le footer du modal */
+.ticket-print-modal__format-toggle {
+  display: flex;
+  gap: var(--space-1);
+  padding: 3px;
+  background-color: var(--color-bg-light);
+  border-radius: var(--radius-md);
+  align-self: center;
+}
+
+.ticket-print-modal__format-btn {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--color-text-muted);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.ticket-print-modal__format-btn--active {
+  background-color: var(--color-surface);
+  color: var(--color-secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.print-modal-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.print-modal-footer__hint {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.ticket-print-modal__print-btn {
+  width: 100%;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+.ticket-print-modal__print-btn:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* ===== Format standard (A4 / lettre) ===== */
+.ticket-print--standard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  text-align: center;
+  padding-block: var(--space-4);
+}
+
+.ticket-print--standard .print-letterhead__header,
+.ticket-print--standard .print-letterhead__footer {
+  align-self: stretch;
+  width: 100%;
+}
+
+.ticket-print--standard .print-letterhead__footer {
+  border-top-style: dashed;
+}
+
+.ticket-print__stub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-8);
+  border: 1.5px dashed var(--color-primary);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, var(--color-bg-light), var(--color-surface));
+}
+
+.ticket-print__label {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ticket-print__numero {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.ticket-print__qr-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.ticket-print__qr-caption {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.ticket-print__details {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.ticket-print__detail-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+}
+
+.ticket-print__detail-row:not(:last-child) {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.ticket-print__detail-row--alt {
+  background-color: var(--color-bg-light);
+}
+
+.ticket-print__detail-label {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.ticket-print__detail-value {
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  text-align: right;
+}
+
+/* ===== Format thermique (reçu 80 mm) ===== */
+.ticket-print--thermal {
+  width: 80mm;
+  max-width: 100%;
+  margin-inline: auto;
+  padding: var(--space-4) var(--space-3);
+  font-family: "Courier New", ui-monospace, monospace;
+  color: #000;
+  text-align: center;
+}
+
+.ticket-print__thermal-poste {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.ticket-print__thermal-tel {
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.ticket-print__thermal-divider {
+  border-top: 1px dashed #000;
+  margin-block: var(--space-3);
+}
+
+.ticket-print__thermal-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.ticket-print__thermal-numero {
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-top: 2px;
+}
+
+.ticket-print__thermal-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.ticket-print__thermal-line {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-size: 12px;
+}
+
+.ticket-print__thermal-line span:first-child {
+  color: #333;
+}
+
+.ticket-print__thermal-line span:last-child {
+  font-weight: 700;
+  text-align: right;
+}
+
+.ticket-print__thermal-qr {
+  display: flex;
+  justify-content: center;
+}
+
+.ticket-print__thermal-footer {
+  font-size: 11px;
+  margin-top: var(--space-2);
+}
+
+/* ===== Impression ===== */
+@page ticket-thermal-page {
+  size: 80mm auto;
+  margin: 0;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .ticket-print--standard,
+  .ticket-print--standard *,
+  .ticket-print--thermal,
+  .ticket-print--thermal * {
+    visibility: visible;
+  }
+
+  .ticket-print--standard {
+    position: fixed;
+    inset: 0;
+    padding-top: var(--space-10);
+  }
+
+  .ticket-print--thermal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80mm;
+    page: ticket-thermal-page;
+  }
+}
