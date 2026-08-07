@@ -8,10 +8,9 @@ import "./HealthPosts.css";
 const HEALTH_POSTS = [
   "Médina Sabakh",
   "Keur Ayib Gueye",
-  "Falila",
+  "Falifa",
   "Kohel",
-  "Ndiba",
-  "Ndiayène",
+  "Ndiba/Ndiayène",
   "Payoma",
 ];
 

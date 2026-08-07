@@ -27,7 +27,7 @@ import "./DesignSystemPage.css";
 
 const SAMPLE_ROWS = [
   { id: 1, nom: "Fatou Diop", poste: "Médina Sabakh", statut: "actif" },
-  { id: 2, nom: "Moussa Ndiaye", poste: "Falila", statut: "en attente" },
+  { id: 2, nom: "Moussa Ndiaye", poste: "Falifa", statut: "en attente" },
   { id: 3, nom: "Aïssatou Ba", poste: "Kohel", statut: "inactif" },
 ];
 
@@ -155,7 +155,7 @@ export default function DesignSystemPage() {
                 required
                 options={[
                   { value: "medina-sabakh", label: "Médina Sabakh" },
-                  { value: "falila", label: "Falila" },
+                  { value: "falifa", label: "Falifa" },
                   { value: "kohel", label: "Kohel" },
                 ]}
               />
