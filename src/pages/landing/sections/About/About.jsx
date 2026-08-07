@@ -5,16 +5,7 @@ export default function About() {
   return (
     <section id="a-propos" className="about">
       <div className="container about__inner">
-        <Reveal className="about__visual" as="div">
-          <img
-            src="/about-illustration.webp"
-            alt="Vue d'ensemble d'un poste de santé UCDS : consultations, vaccination, pharmacie et mobilisation communautaire"
-            className="about__image"
-            loading="lazy"
-          />
-        </Reveal>
-
-        <Reveal delay={100} className="about__content">
+        <Reveal className="about__content">
           <span className="about__eyebrow">Qui sommes-nous ?</span>
           <h2>L'Union des Comités de Développement Sanitaire</h2>
           <p className="about__lead">
