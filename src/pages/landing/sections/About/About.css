@@ -21,35 +21,16 @@
   transform: translateY(0) scale(1);
 }
 
-.about__float {
-  width: 100%;
-  animation: about-float 7s ease-in-out infinite;
-}
-
 .about__image {
   display: block;
   width: 100%;
   height: auto;
 }
 
-@keyframes about-float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .about__visual.reveal,
   .about__visual.reveal--visible {
     transform: none;
-  }
-
-  .about__float {
-    animation: none;
   }
 }
 
