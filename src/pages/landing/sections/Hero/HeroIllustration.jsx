@@ -1,63 +1,70 @@
+import { CheckCircleIcon, ClipboardIcon, MapPinIcon, PillIcon, UsersIcon } from "../../../../components/ui/icons";
+
 export default function HeroIllustration() {
   return (
-    <svg
-      className="hero-illustration"
-      viewBox="0 0 480 420"
-      role="img"
-      aria-label="Illustration représentant la coordination des postes de santé de l'UCDS"
-    >
-      <defs>
-        <linearGradient id="hero-card-grad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#2AAE8A" />
-          <stop offset="1" stopColor="#124D41" />
-        </linearGradient>
-      </defs>
+    <div className="hero-mock" role="img" aria-label="Aperçu du tableau de bord d'un poste de santé sur la plateforme UCDS">
+      <div className="hero-mock__blob hero-mock__blob--a" aria-hidden="true" />
+      <div className="hero-mock__blob hero-mock__blob--b" aria-hidden="true" />
 
-      {/* Blobs décoratifs flottants */}
-      <circle className="hero-illustration__float hero-illustration__float--a" cx="70" cy="80" r="46" fill="#CFF7EA" />
-      <circle className="hero-illustration__float hero-illustration__float--b" cx="430" cy="330" r="60" fill="#7FE3C6" opacity="0.5" />
-      <circle className="hero-illustration__float hero-illustration__float--c" cx="420" cy="60" r="26" fill="#2AAE8A" opacity="0.25" />
+      <div className="hero-mock__card">
+        <div className="hero-mock__card-header">
+          <span className="hero-mock__poste">
+            <span className="hero-mock__poste-dot" aria-hidden="true" />
+            Poste de santé — Kohel
+          </span>
+          <span className="hero-mock__status">
+            <span className="hero-mock__status-dot" aria-hidden="true" />
+            En ligne
+          </span>
+        </div>
 
-      {/* Carte centrale */}
-      <rect x="90" y="70" width="300" height="280" rx="28" fill="var(--color-white)" stroke="var(--color-border)" />
-      <rect x="90" y="70" width="300" height="64" rx="28" fill="url(#hero-card-grad)" />
-      <rect x="90" y="110" width="300" height="24" fill="url(#hero-card-grad)" />
-      <circle cx="118" cy="102" r="6" fill="#F2FFFB" opacity="0.9" />
-      <rect x="140" y="96" width="90" height="12" rx="6" fill="#F2FFFB" opacity="0.85" />
+        <div className="hero-mock__pulse">
+          <svg viewBox="0 0 240 40" preserveAspectRatio="none" className="hero-mock__pulse-line" aria-hidden="true">
+            <path d="M0 22h26l8-14 12 28 10-22 7 8h28l8-14 12 28 10-22 7 8h112" />
+          </svg>
+        </div>
 
-      {/* Pouls central */}
-      <path
-        d="M118 190h30l14-30 20 55 16-38 12 13h60"
-        fill="none"
-        stroke="var(--color-primary)"
-        strokeWidth="4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+        <div className="hero-mock__rows">
+          <div className="hero-mock__row">
+            <span className="hero-mock__row-icon">
+              <UsersIcon />
+            </span>
+            <span className="hero-mock__row-label">Patients suivis</span>
+            <span className="hero-mock__row-value">1 240</span>
+          </div>
+          <div className="hero-mock__row">
+            <span className="hero-mock__row-icon">
+              <ClipboardIcon />
+            </span>
+            <span className="hero-mock__row-label">Consultations ce mois</span>
+            <span className="hero-mock__row-value">312</span>
+          </div>
+          <div className="hero-mock__row">
+            <span className="hero-mock__row-icon">
+              <PillIcon />
+            </span>
+            <span className="hero-mock__row-label">Stock pharmacie</span>
+            <span className="hero-mock__row-value hero-mock__row-value--ok">
+              <CheckCircleIcon />À jour
+            </span>
+          </div>
+        </div>
+      </div>
 
-      {/* Barres de statistiques */}
-      <rect x="118" y="240" width="34" height="60" rx="6" fill="var(--color-bg-light)" />
-      <rect x="118" y="270" width="34" height="30" rx="6" fill="var(--color-primary)" />
-      <rect x="166" y="220" width="34" height="80" rx="6" fill="var(--color-bg-light)" />
-      <rect x="166" y="255" width="34" height="45" rx="6" fill="var(--color-primary)" />
-      <rect x="214" y="255" width="34" height="45" rx="6" fill="var(--color-bg-light)" />
-      <rect x="214" y="278" width="34" height="22" rx="6" fill="var(--color-primary)" />
+      <div className="hero-mock__badge hero-mock__badge--network" aria-hidden="true">
+        <span className="hero-mock__badge-icon">
+          <MapPinIcon />
+        </span>
+        <div className="hero-mock__badge-text">
+          <strong>6 postes</strong>
+          <span>en réseau</span>
+        </div>
+      </div>
 
-      {/* Badge "réseau de postes" */}
-      <g className="hero-illustration__float hero-illustration__float--b">
-        <circle cx="330" cy="255" r="34" fill="var(--color-secondary)" />
-        <path d="M330 240v10M321 250h18" stroke="#F2FFFB" strokeWidth="3" strokeLinecap="round" />
-      </g>
-
-      {/* Noeuds connectés (postes de santé en réseau) */}
-      <g stroke="var(--color-light)" strokeWidth="2" opacity="0.8">
-        <line x1="40" y1="360" x2="90" y2="330" />
-        <line x1="40" y1="360" x2="20" y2="300" />
-        <line x1="440" y1="150" x2="390" y2="180" />
-      </g>
-      <circle className="hero-illustration__float hero-illustration__float--a" cx="40" cy="360" r="10" fill="var(--color-primary)" />
-      <circle className="hero-illustration__float hero-illustration__float--c" cx="20" cy="300" r="7" fill="var(--color-secondary)" />
-      <circle className="hero-illustration__float hero-illustration__float--b" cx="440" cy="150" r="9" fill="var(--color-secondary)" />
-    </svg>
+      <div className="hero-mock__badge hero-mock__badge--activity" aria-hidden="true">
+        <span className="hero-mock__activity-dot" />
+        Nouveau patient enregistré
+      </div>
+    </div>
   );
 }

@@ -5,7 +5,7 @@ import "./Stats.css";
 
 /* Chiffres illustratifs en attendant le branchement sur les statistiques réelles (étape 15) */
 const STATS = [
-  { icon: MapPinIcon, target: 7, suffix: "", label: "Postes de santé" },
+  { icon: MapPinIcon, target: 6, suffix: "", label: "Postes de santé" },
   { icon: UsersIcon, target: 24, suffix: "", label: "Villages couverts" },
   { icon: ClipboardIcon, target: 38, suffix: "", label: "Campagnes menées" },
   { icon: HeartPulseIcon, target: 12000, suffix: "+", label: "Bénéficiaires accompagnés" },
