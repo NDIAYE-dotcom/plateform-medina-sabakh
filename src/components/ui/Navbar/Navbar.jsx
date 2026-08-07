@@ -76,7 +76,7 @@ export default function Navbar({
                     <li key={item.id}>
                       <Link
                         to={item.to}
-                        className="navbar__notifications-item"
+                        className={`navbar__notifications-item ${item.urgent ? "navbar__notifications-item--urgent" : ""}`}
                         onClick={() => setPanelOpen(false)}
                       >
                         <span className="navbar__notifications-item-label">{item.label}</span>

@@ -172,6 +172,7 @@ export default function DashboardLayout() {
             label: account.full_name || "Compte sans nom",
             description: `Demande ${account.poste_souhaite.nom}`,
             to: `/poste/${account.poste_souhaite.slug}/personnel`,
+            urgent: true,
           }))
       : []),
     ...(posteAlerts.stockBasCount > 0
@@ -191,6 +192,7 @@ export default function DashboardLayout() {
             label: `${posteAlerts.comptesEnAttenteCount} compte${posteAlerts.comptesEnAttenteCount > 1 ? "s" : ""} en attente d'affectation`,
             description: "Personnel",
             to: `/poste/${currentPosteSlug}/personnel`,
+            urgent: true,
           },
         ]
       : []),

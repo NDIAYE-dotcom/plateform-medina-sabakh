@@ -92,6 +92,18 @@
   background-color: var(--color-surface-alt);
 }
 
+/* Demandes d'affectation en attente : bande rouge pour que le Super Admin les repère en priorité
+   parmi les autres alertes, moins urgentes (poste sans admin, stock bas...). */
+.navbar__notifications-item--urgent {
+  border-left: 3px solid var(--color-danger);
+  background-color: rgba(201, 67, 47, 0.08);
+  padding-left: calc(var(--space-2) - 3px);
+}
+
+.navbar__notifications-item--urgent:hover {
+  background-color: rgba(201, 67, 47, 0.12);
+}
+
 .navbar__notifications-item-label {
   font-weight: 600;
   font-size: var(--font-size-sm);
