@@ -3,13 +3,10 @@
 }
 
 .about__inner {
-  display: flex;
-  justify-content: center;
-}
-
-.about__content {
-  max-width: 68ch;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: center;
 }
 
 .about__eyebrow {
@@ -37,5 +34,11 @@
   border-left: 3px solid var(--color-primary);
   padding-left: var(--space-5);
   font-style: italic;
-  text-align: left;
+}
+
+@media (min-width: 960px) {
+  .about__inner {
+    grid-template-columns: 1fr 0.9fr;
+    gap: var(--space-10);
+  }
 }

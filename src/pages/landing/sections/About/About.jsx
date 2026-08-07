@@ -1,4 +1,5 @@
 import Reveal from "../../components/Reveal/Reveal";
+import AboutCarousel from "./AboutCarousel";
 import "./About.css";
 
 export default function About() {
@@ -14,6 +15,10 @@ export default function About() {
             leurs actions et parler d'une seule voix pour améliorer durablement la santé des
             populations. »
           </p>
+        </Reveal>
+
+        <Reveal delay={120} className="about__visual">
+          <AboutCarousel />
         </Reveal>
       </div>
     </section>
