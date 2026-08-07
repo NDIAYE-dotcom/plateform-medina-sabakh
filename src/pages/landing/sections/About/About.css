@@ -11,10 +11,6 @@
 
 .about__visual {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-6);
 }
 
 .about__visual.reveal {
@@ -27,7 +23,6 @@
 
 .about__float {
   width: 100%;
-  max-width: 480px;
   animation: about-float 7s ease-in-out infinite;
 }
 
